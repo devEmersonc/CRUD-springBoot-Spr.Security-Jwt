@@ -34,7 +34,7 @@ public class UserController {
     @PostMapping("/save-user")
     public ResponseEntity<String> saveUser(@Valid @RequestBody RegisterUserDTO registerUserDTO) {
         userService.saveUser(registerUserDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Usuario actualizado.");
+        return ResponseEntity.status(HttpStatus.CREATED).body("Usuario registrado.");
     }
 
     @PutMapping("/{id}")

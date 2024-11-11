@@ -55,6 +55,7 @@ public class UserServiceImpl implements UserService {
         user.setUsername(registerUserDTO.getUsername());
         user.setPassword(passwordEncoder.encode(registerUserDTO.getPassword()));
         user.setEmail(registerUserDTO.getEmail());
+        user.setRoles(user.getRoles());
         userRepository.save(user);
     }
 
@@ -70,7 +71,6 @@ public class UserServiceImpl implements UserService {
         userDTO.setId(user.getId());
         userDTO.setUsername(user.getUsername());
         userDTO.setEmail(user.getEmail());
-        userDTO.setRoles(user.getRoles());
         return userDTO;
     }
 }
